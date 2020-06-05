@@ -1,0 +1,67 @@
+swagger: '2.0'
+info:
+  title: Grupo A - Students
+  description: 'Test realized for full stack developer job.'
+  version: '1.0'
+produces:
+  - application/json
+paths:
+  /students:
+    get:
+      summary: List all students.
+      tags:
+        - /students
+      description: 'this route should be able list all students'
+      parameters:
+        - name: ra
+          in: json
+          required: true
+          type: number
+        - name: name
+          in: json
+          required: true
+          type: string
+        - name: email
+          in: json
+          required: true
+          type: string
+        - name: cpf
+          in: json
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 'status code this success request.'
+          schema:
+            type: object
+          examples:
+            application/json: |-
+              {
+               ra: number, 
+               name: string, 
+               email: string, 
+               cpf: string 
+              }
+        '500':
+          description: Error application
+          examples:
+            application/json: '{ message: Error in application.}'
+  /student/ra:
+    get:
+      summary: Find student by RA.
+      tags:
+        - /student/ra
+      description: 'this route should be able find a student by RA.'  
+  /student/ra:
+    put:
+      summary: Updated a student by RA.
+      tags:
+        - /student/ra
+      description: 'this route should be able updated a student by RA.'    
+  /student/ra:
+    delete:
+      summary: Delete student by RA.
+      tags:
+        - /student/ra
+      description: 'this route should be able delete a student by RA.'    
+                         
