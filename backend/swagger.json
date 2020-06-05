@@ -12,40 +12,6 @@ paths:
       tags:
         - /students
       description: 'this route should be able list all students'
-      parameters:
-        - name: ra
-          in: json
-          required: true
-          type: number
-        - name: name
-          in: json
-          required: true
-          type: string
-        - name: email
-          in: json
-          required: true
-          type: string
-        - name: cpf
-          in: json
-          required: true
-          type: string
-      responses:
-        '200':
-          description: 'status code this success request.'
-          schema:
-            type: object
-          examples:
-            application/json: |-
-              {
-               ra: number, 
-               name: string, 
-               email: string, 
-               cpf: string 
-              }
-        '500':
-          description: Error application
-          examples:
-            application/json: '{ message: Error in application.}'
   /student/ra:
     get:
       summary: Find student by RA.

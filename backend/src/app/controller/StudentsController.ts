@@ -9,8 +9,7 @@ const studentsValidators = new StudentsValidators();
  * 
  * @author Marcelo Jean O. Pinheiro <marcelojeam1@gmail.com>
  */
-class StudentsController 
-{
+class StudentsController {
 
   /**
    * List all students.
@@ -20,7 +19,7 @@ class StudentsController
    */
   async index(request: Request, response: Response) {
     const students = await knex.select().table('students');
-  
+
     return response.json(students);
   }
 
@@ -30,30 +29,29 @@ class StudentsController
    * @param request This object comes with the requisition.
    * @param response This object define a response.
    */
-  async create(request: Request, response: Response) 
-  {
-    const { 
-      ra, 
-      name, 
-      email, 
-      cpf 
+  async create(request: Request, response: Response) {
+    const {
+      ra,
+      name,
+      email,
+      cpf
     } = request.body;
-  
+
     const validators = studentsValidators.create(request, response);
-      
-    if (! validators) {
+
+    if (!validators) {
       return response.json(validators);
     }
 
     await knex("students").insert({
       ra,
-      name, 
-      email, 
+      name,
+      email,
       cpf
     });
-    
+
     return response.json({
-       message: `${name} inserted with success in database.` 
+      message: `${name} inserted with success in database.`
     });
   }
 
@@ -66,22 +64,22 @@ class StudentsController
   async update(request: Request, response: Response) {
     const { ra } = request.params;
     const { name, email } = request.body;
-  
+
     const validators = studentsValidators.update(request, response);
-      
-    if (! validators) return response.json(validators);
-    
+
+    if (!validators) return response.json(validators);
+
     const verifyStudent = await knex('students').where('ra', ra);
-  
-    if (! verifyStudent) return response.json("Student not found.");
-    
+
+    if (!verifyStudent) return response.json("Student not found.");
+
     await knex('students')
-    .where('ra', '=', ra)
-    .update({
-      name,
-      email
-    })
-  
+      .where('ra', '=', ra)
+      .update({
+        name,
+        email
+      })
+
     return response.json({ message: "Student updated with success." });
   }
 
@@ -93,13 +91,13 @@ class StudentsController
    */
   async delete(request: Request, response: Response) {
     const { ra } = request.params;
-  
+
     const validators = studentsValidators.delete(request, response);
-      
-    if (! validators) return response.json(validators);
-    
-     await knex('students').where('ra', '=', ra).del();
-  
+
+    if (!validators) return response.json(validators);
+
+    await knex('students').where('ra', '=', ra).del();
+
     return response.json({ message: "Student deleted with success." });
   }
 
@@ -111,14 +109,14 @@ class StudentsController
    */
   async findByRA(request: Request, response: Response) {
     const { ra } = request.params;
-  
+
     const validators = studentsValidators.delete(request, response);
-      
-    if (! validators) return response.json(validators);
+
+    if (!validators) return response.json(validators);
 
     const student = await knex.select()
-    .table('students')
-    .where('ra','=', ra);
+      .table('students')
+      .where('ra', '=', ra);
 
     return response.json({ student });
   }

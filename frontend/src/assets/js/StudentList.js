@@ -113,7 +113,7 @@ export default {
      * 
      */
     close () {
-      this.dialog = false
+      this.dialog = false;
       this.$nextTick(() => {
         this.editedStudent = Object.assign({}, this.defaultStudent);
         this.editedIndex = -1;

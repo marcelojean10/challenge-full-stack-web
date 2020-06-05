@@ -1,9 +1,10 @@
 import { Request, Response } from 'express';
-import { 
-  ValidationResult, 
-  object, 
-  string, 
-  number } from 'joi';
+import {
+  ValidationResult,
+  object,
+  string,
+  number
+} from 'joi';
 
 
 /**
@@ -11,8 +12,7 @@ import {
  * 
  * @author Marcelo Jean O. Pinheiro <marcelojeam1@gmail.com>
  */
-class StudentsValidators
-{
+class StudentsValidators {
 
   /**
    *  Verify necessary infos before inserted a new student.
@@ -20,9 +20,8 @@ class StudentsValidators
    * @param request 
    * @param response 
    */
-  async create(request: Request, response: Response) 
-  {
-    const schema = object({ 
+  async create(request: Request, response: Response) {
+    const schema = object({
       ra: number(),
       name: string().min(6).required(),
       email: string().min(6).required().email(),
@@ -30,28 +29,27 @@ class StudentsValidators
     });
 
     const validators: ValidationResult<any> = schema.validate(request.body);
-  
+
     if (validators.error) return response.status(400).json({ message: validators.error.message });
 
   }
 
-   /**
-   *  Verify necessary infos before updated student.
-   * 
-   * @param request 
-   * @param response 
-   */
-  async update(request: Request, response: Response) 
-  {
-    const schema = object({ 
+  /**
+  *  Verify necessary infos before updated student.
+  * 
+  * @param request 
+  * @param response 
+  */
+  async update(request: Request, response: Response) {
+    const schema = object({
       name: string().min(6).required(),
       email: string().min(6).required().email()
     });
 
     const validators: ValidationResult<any> = schema.validate(request.body);
-  
+
     if (validators.error) return response.status(400).json({ message: validators.error.message });
-    
+
   }
 
   /**
@@ -60,14 +58,13 @@ class StudentsValidators
    * @param request 
    * @param response 
    */
-  async delete(request: Request, response: Response)
-  {
-    const schema = object({ 
+  async delete(request: Request, response: Response) {
+    const schema = object({
       ra: number().required()
     });
 
     const validators: ValidationResult<any> = schema.validate(request.params);
-  
+
     if (validators.error) return response.status(400).json({ message: validators.error.message });
   }
 }

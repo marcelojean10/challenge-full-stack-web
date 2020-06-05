@@ -35,45 +35,45 @@
        * 
        */
       raErrors () {
-        const errors = []
+        const errors = [];
         if (!this.$v.name.$dirty) return errors
-        !this.$v.ra.maxLength && errors.push('RA must be at most 10 characters long')
-        !this.$v.ra.required && errors.push('RA is required.')
-        return errors
+        !this.$v.ra.maxLength && errors.push('RA must be at most 10 characters long');
+        !this.$v.ra.required && errors.push('RA is required.');
+        return errors;
       },
       /**
        * Student name erros.
        * 
        */
       nameErrors () {
-        const errors = []
-        if (!this.$v.name.$dirty) return errors
-        !this.$v.name.minLength && errors.push('Name must be at most 5 characters small')
-        !this.$v.name.required && errors.push('Name is required.')
-        return errors
+        const errors = [];
+        if (!this.$v.name.$dirty) return errors;
+        !this.$v.name.minLength && errors.push('Name must be at most 5 characters small');
+        !this.$v.name.required && errors.push('Name is required.');
+        return errors;
       },
       /**
        * Documment student erros.
        * 
        */
       cpfErrors () {
-        const errors = []
-        if (!this.$v.cpf.$dirty) return errors
-        !this.$v.cpf.maxLength && errors.push('CPF must be at most 11 characters long')
+        const errors = [];
+        if (!this.$v.cpf.$dirty) return errors;
+        !this.$v.cpf.maxLength && errors.push('CPF must be at most 11 characters long');
         !this.$v.cpf.required && errors.push('CPF is required.');
         !this.$v.cpf.cpfValidator && errors.push('CPF invalid.');
-        return errors
+        return errors;
       },
       /**
        * E-mail errros.
        * 
        */
       emailErrors () {
-        const errors = []
-        if (!this.$v.email.$dirty) return errors
-        !this.$v.email.email && errors.push('Must be valid e-mail')
-        !this.$v.email.required && errors.push('E-mail is required')
-        return errors
+        const errors = [];
+        if (!this.$v.email.$dirty) return errors;
+        !this.$v.email.email && errors.push('Must be valid e-mail');
+        !this.$v.email.required && errors.push('E-mail is required');
+        return errors;
       }
     },
 

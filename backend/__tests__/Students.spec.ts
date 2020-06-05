@@ -3,11 +3,13 @@ import knex from '../src/database/connection';
 import app from '../src/server';
 
 it('should be able to create a new student', async () => {
+    const ra = 66;
     const name = 'Marcelo Kozvoski';
     const email = 'richardkozvoski@io.com.ea';
     const cpf = '87335511010';
 
     await knex("students").insert({
+      ra,
       name, 
       email, 
       cpf
