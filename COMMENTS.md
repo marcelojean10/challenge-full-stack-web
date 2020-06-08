@@ -33,7 +33,7 @@ Teste simples realizado para conhecer o participante, suas intenções em códig
 * joi - Utilizado para validar campos no backend.
 * cors - Utilizado para permitir acesso externo a API.
 * typescript - Utilizado para tipar o backend.
-* knex - Utilizado para deixar elegante a forma de escrever queries com postgre.
+* typeorm - Utilizado para deixar elegante a forma de escrever queries com postgre.
 * jest - Utilizado para testar as funcionalidades existentes na API.
 * supertest - Utilizado para requisitar a API mesmo offline. (Usado para testar)
 * dotenv - Utilizado para guardar as variaveis em ambiente, para não ficar expostas.
@@ -42,6 +42,7 @@ Teste simples realizado para conhecer o participante, suas intenções em códig
 * vee-validate - Utilizado para validar os campos do formulário.
 * vue-router - Utilizado para termos rotas elegantes no vue.
 * cpfValidator - Utilizado para validar se o CPF é válido.
+* swagger - Utilizado para criar documentações.
 
 ## O que você melhoraria se tivesse mais tempo:
 - Deploy para o Heroku, google cloud, ou outro serviço de cloud.
@@ -56,6 +57,10 @@ Teste simples realizado para conhecer o participante, suas intenções em códig
 Na pasta backend deixei um arquivo swagger.json. 
 
 O Swagger ajuda os desenvolvedores a projetar, criar, documentar e consumir serviços da Web RESTful.
+
+## Deploy feito no Heroku para testes.
+Backend: https://grupoa-backend.herokuapp.com/ (RESTful)
+Frontend: https://grupoa-frontend.herokuapp.com/ (Aguarde aparecer a lista de students.)
 
 ## Preparando ambiente de testes!
 Certifique-se que tenha instalado em seu computador:
