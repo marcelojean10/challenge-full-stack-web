@@ -45,7 +45,6 @@ Teste simples realizado para conhecer o participante, suas intenções em códig
 * swagger - Utilizado para criar documentações.
 
 ## O que você melhoraria se tivesse mais tempo:
-- Deploy para o Heroku, google cloud, ou outro serviço de cloud.
 - Typing no Vue.
 - Tests mais complexos.
 
@@ -61,7 +60,7 @@ Na pasta backend deixei um arquivo swagger.json.
 O Swagger ajuda os desenvolvedores a projetar, criar, documentar e consumir serviços da Web RESTful.
 
 ## Deploy feito no Heroku para testes.
-Backend: https://grupoa-backend.herokuapp.com/ (RESTful)
+Backend: https://grupoa-backend.herokuapp.com/ (RESTful)<br>
 Frontend: https://grupoa-frontend.herokuapp.com/ (Aguarde aparecer a lista de students.)
 
 ## Author
