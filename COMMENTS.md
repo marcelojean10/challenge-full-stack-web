@@ -54,7 +54,9 @@ Teste simples realizado para conhecer o participante, suas intenções em códig
 
 
 ## Documentação
-Na pasta backend deixei um arquivo swagger.json. 
+Na pasta backend deixei um arquivo swagger.json.
+[Swagger Restful do backend](https://grupoa-backend.herokuapp.com/docs/#/ )
+
 
 O Swagger ajuda os desenvolvedores a projetar, criar, documentar e consumir serviços da Web RESTful.
 
@@ -62,54 +64,10 @@ O Swagger ajuda os desenvolvedores a projetar, criar, documentar e consumir serv
 Backend: https://grupoa-backend.herokuapp.com/ (RESTful)
 Frontend: https://grupoa-frontend.herokuapp.com/ (Aguarde aparecer a lista de students.)
 
-## Preparando ambiente de testes!
-Certifique-se que tenha instalado em seu computador:
-* npm ou yarn: (No seu terminal e dentro da pasta, digite):
-<code>
-  npm install
-  yarn install
-</code>
+## Author
 
-* Docker (Utilizado nesse projeto para facilitar a conexão com o banco):
+Marcelo Jean - I like codes.
 
-<code>
-  docker run --name database -p 5432:5432 -d -t kartoza/postgis
-</code>
-
-Com o banco conectado você pode acessar seu postgre e criar uma database.
-No meu caso eu uso o DBeaver community (Usava o mesmo quando trabalhava com ORACLEdb).
-
-Settings default:
-<code>
-  Host: 127.0.0.1
-  Database: postgres
-  User: docker
-  Password: docker
-</code>
-
-Conectado com o banco, crie a database com o nome: grupoa.
-
-* Inicialize o servidor do backend:
-<code>
-  yarn dev:server
-</code>
-
-Knex: Rode a migration, para criarmos a tabela no banco com seus devidos campos:
-
-<code>
-  npx knex migrate:latest --knexfile knexfile.ts migrate:latest
-</code>
-
-Após isso, seu backend está funcional.
-
-No front-end, é simples, entre na pasta e no terminal, digite:
-
-<code>
-* npm install ou yarn install
-</code>
-
-E logo após:
-<code>yarn serve</code>
 
 ## License
 
