@@ -1,0 +1,203 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Group A - Students",
+    "description": "API for test in Group A - Thank for opportunity",
+    "version": "1.0"
+  },
+  "host": "grupoa-backend.herokuapp.com",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/students": {
+      "get": {
+        "summary": "List all students student.",
+        "tags": [
+          "/students"
+        ],
+        "description": "This route should be able list all students.",
+        "parameters": [
+          {}
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok. listed all students.",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {
+              "application/json": "{\n }"
+            }
+          },
+          "500": {
+            "description": "Error in server. ",
+            "examples": {
+              "application/json": "{ success: false, message: 'An error occurred on the server.' }"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new student.",
+        "tags": [
+          "/students"
+        ],
+        "description": "This route should be able create a new students.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cpf",
+            "in": "json",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {
+              "application/json": "{\n id: number, \n name: string, \n email: string, \n cpf: string \n}"
+            }
+          },
+          "500": {
+            "description": "Error in server.",
+            "examples": {
+              "application/json": "{ success: false, message: 'An error occurred on the server.' }"
+            }
+          }
+        }
+      }
+    },
+    "/students/ra": {
+      "get": {
+        "summary": "Find a student by RA.",
+        "tags": [
+          "/students/ra"
+        ],
+        "description": "This route should be able list a student specified.",
+        "parameters": [
+          {
+            "name": "ra",
+            "in": "param",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok. Student was listed.",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {
+              "application/json": "{\n ra: number, \n name: string, \n email: string, \n cpf: string \n}"
+            }
+          },
+          "404": {
+            "description": "Error not found.",
+            "examples": {
+              "application/json": "{ message: 'Error not found.' }"
+            }
+          },
+          "500": {
+            "description": "Error in server.",
+            "examples": {
+              "application/json": "{ message: 'An error occurred on the server.' }"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a student by RA.",
+        "tags": [
+          "/students/ra"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "json",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "json",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok. Student updated with success.",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {
+              "application/json": "{\n ra: number, \n name: string, \n email: string, \n cpf: string \n}"
+            }
+          },
+          "500": {
+            "description": "Error in server.",
+            "examples": {
+              "application/json": "{ success: false, message: 'An error occurred on the server.' }"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a student by RA.",
+        "tags": [
+          "/students/ra"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "ra",
+            "in": "param",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {
+              "application/json": "{\n ra: number}"
+            }
+          },
+          "404": {
+            "description": "Student not found.",
+            "examples": {
+              "application/json": "{ message: 'Student does not exist.' }"
+            }
+          },
+          "500": {
+            "description": "Error in server.",
+            "examples": {
+              "application/json": "{ message: 'An error occurred on the server.' }"
+            }
+          }
+        }
+      }
+    }
+  }
+}
